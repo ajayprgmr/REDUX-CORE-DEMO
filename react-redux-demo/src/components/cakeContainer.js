@@ -7,6 +7,7 @@ const CakeContainer = (props) => {
 
     return (
         <div>
+            <h1>Using Connect</h1>
             <h2>No of Cakes - {props.numOfCakes}</h2>
             <button onClick={props.buyCake}>  
                 Buy Cake
@@ -18,7 +19,7 @@ const CakeContainer = (props) => {
                 placeholder='no. of cakes of add'
                 onChange={(e) => setNoOfCakesToAdd(e.target.value)} 
             />
-            <button onClick={() => props.addCake(noOfCakesToAdd)}> 
+            <button onClick={()=>props.addCake(noOfCakesToAdd)}> 
                 Add Cake
             </button>
         </div>
@@ -27,7 +28,7 @@ const CakeContainer = (props) => {
 
 const mapStateToProps = state => {
     return {
-        numOfCakes: state.numOfCakes,
+        numOfCakes: state.cake.numOfCakes,
     };
 };
 

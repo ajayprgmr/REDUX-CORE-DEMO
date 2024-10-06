@@ -3,12 +3,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addCake, buyCake } from '../redux/cakes/cakeActions';
 
 const HooksCakeContainer = () => {
-   const currentNoOfCakes = useSelector(state => state.numOfCakes);
+   const currentNoOfCakes = useSelector(state => state.cake.numOfCakes);
    const dispatch = useDispatch();
    const [number, setNumber] = useState(1);
 
    return (
      <div>
+      <h1>Using Hooks</h1>
        <h2>Num of Cakes - {currentNoOfCakes}</h2>
        <button onClick={() => dispatch(buyCake())}>Buy Cake</button>
        
